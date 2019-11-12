@@ -4,7 +4,7 @@ var sensorFilePath = 'db/sensors.json';
 
 var loadFileSensors = function(){
   var fileData = fs.readFileSync(sensorFilePath, 'utf8'); // ler arquivos do banco 
-  var sensors = JSON.parse(fileData);
+ var sensors = JSON.parse(fileData);
 
   return sensors;
 }
@@ -20,9 +20,9 @@ var getSensors = function() {
 }
 
 var saveSensors = function(newSensor) {
-  var posts = loadFileSensors();
+  var sensors = loadFileSensors();
   sensors.push(newSensor);
-  saveSensors(sensors);
+  saveFileSensors(sensors);
 }
 
 module.exports = {

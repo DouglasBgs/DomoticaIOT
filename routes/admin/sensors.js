@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     sensors: sensors
   }
 
-  res.render('admin/', data);
+  res.render('admin/sensors/index', data);
 });
 
 router.get('/create', function(req, res, next){

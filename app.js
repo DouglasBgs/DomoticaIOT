@@ -9,7 +9,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminSensorsRouter = require ('./routes/admin/sensors');
-var adminAcionaveisRoutes = require ('./routes/admin/acionaveis');
+var adminAcionaveisRouter = require ('./routes/admin/acionaveis');
 var authRouter = require ('./routes/auth');
 var verifyAuth = require ('./middlewares/authmiddleware');
 
@@ -37,6 +37,7 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/admin', [verifyAuth], adminSensorsRouter);
 app.use('/admin/sensors', [verifyAuth], adminSensorsRouter);
+app.use('/admin/acionaveis', [verifyAuth], adminAcionaveisRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
