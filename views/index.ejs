@@ -7,9 +7,16 @@
   </head>
   <body>
       <%- include('navbar'); -%>
-    <div class="pagina-inicial border md-12 container">
-      <h1 class="row center"><%= title %></h1>
-      <p class="row">Welcome to <%= title %></p>
+    <div class="pagina-inicial md-12 container">
+        <div class="card" style="width: 18rem;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUDn44HILEH4zl5tyLclJYLaTd9fiFM-22pEpJHOr4fMYoS5L5" class="card-img-top" width="50px" height="300px">
+            <div class="card-body">
+              <h5 class="card-title">Luz cozinha Acesa</h5>
+              <p class="card-text">Precione o botão abaixo para acender ou apagar a luz</p>
+              <a href="#" class="btn btn-success">Acender</a>
+              <a href="#" class="btn btn-danger">Apagar</a>
+            </div>
+          </div>
     </div>
     <div class="mx-auto fixed-bottom" style="width: 400px;">
         <%- include('footer'); -%>

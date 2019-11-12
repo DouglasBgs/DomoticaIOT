@@ -21,6 +21,21 @@
           </div>
         </div>
     </ul>
+    <div >
+      <% if (locals.loggedUser) { %>
+        <ul class=" navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="user nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= locals.loggedUser.name %>
+                  <img src="<%= `/images/${locals.loggedUser.image}` %>" class="rounded" width="35px">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="/auth/logout">Sair</a>
+                </div>
+            </li>
+        </ul>
+      <% } %> 
+    </div>
   </div>
 </div>
 
