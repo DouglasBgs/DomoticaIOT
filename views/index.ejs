@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Casa da Mãe Joana</title>
+    <%- include('imports'); -%>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+      <%- include('navbar'); -%>
+    <div class="pagina-inicial border md-12 container">
+      <h1 class="row center"><%= title %></h1>
+      <p class="row">Welcome to <%= title %></p>
+    </div>
   </body>
 </html>
