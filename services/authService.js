@@ -47,3 +47,4 @@ module.exports = {
   getUserByEmail: getUserByEmail,
   generateToken: generateToken,
 }
+

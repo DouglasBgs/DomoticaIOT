@@ -1,17 +1,17 @@
-var fs = require ('fs');
+var fs = require('fs');
 
-var sensorFilePath = 'db/sensors.json';
+var sensorsFilePath = 'db/temp_sensors.json';
 
-var loadFileSensors = function(){
-  var fileData = fs.readFileSync(sensorFilePath, 'utf8'); // ler arquivos do banco 
- var sensors = JSON.parse(fileData);
+var loadFileSensors = function() {
+  var fileData = fs.readFileSync(sensorsFilePath, 'utf8');
+  var sensors = JSON.parse(fileData);
 
   return sensors;
 }
 
 var saveFileSensors = function(sensors) {
   var data = JSON.stringify(sensors);
-  fs.writeFileSync(sensorFilePath, data, 'utf8');
+  fs.writeFileSync(sensorsFilePath, data, 'utf8');
 }
 
 var getSensors = function() {
@@ -26,6 +26,6 @@ var saveSensors = function(newSensor) {
 }
 
 module.exports = {
-getSensors: getSensors, 
-  saveSensors: saveSensors  // controle de acesso a dados em outras partes do sistema.
+  getSensors: getSensors,
+  saveSensors: saveSensors
 }

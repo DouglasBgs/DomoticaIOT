@@ -1,5 +1,10 @@
 var authService = require('../services/authService');
 
+function redirectToLogin(res) {
+  res.locals.loggedUser = null;
+  res.redirect('/auth/login');
+}
+
 var verifyAuth = function(req, res, next) {
   var loginToken = req.cookies['loginToken'];
 
@@ -10,12 +15,15 @@ var verifyAuth = function(req, res, next) {
       if (user) {
         res.locals.loggedUser = authService.getUserByEmail(user.email);
         next();
+      }else{
+        redirectToLogin(res);
       }
+    }else{
+      redirectToLogin(res);
     }
+  }else{
+    redirectToLogin(res);
   }
-
-  res.locals.loggedUser = null;
-  res.redirect('/auth/login');
 }
 
-module.exports = verifyAuth; 
+module.exports = verifyAuth;

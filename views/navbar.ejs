@@ -1,42 +1,41 @@
-
-<nav class="border border-1  top navbar navbar-expand-lg navbar-light fixed-top">  
-  <a class="navbar-brand" href="/">
-    <img src="/images/logo.png" width="50" height="50" alt="">
-    A casa 
-  </a>
-  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"   aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
-<div class="menu-superior">
-  <div class="collapse row navbar-collapse text-white data-target"  id="navbarNav">
-    <ul class="navbar-nav ">
-      <li class=" nav-item"></li>
-      <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Administração
-          </button>
-          <div class="dropdown-menu  " aria-labelledby="dropdownMenuButton">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(Página atual)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sensors">Sensores</a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Administração
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/admin/sensors">Sensores</a>
-            <a class="dropdown-item" href="/admin/Acionaveis">Dispositivos Acionaveis</a>
+            <a class="dropdown-item" href="/admin/actuators">Produtos</a>
           </div>
-        </div>
+      </li>
     </ul>
-    <div >
-      <% if (locals.loggedUser) { %>
-        <ul class=" navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="user nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <%= locals.loggedUser.name %>
-                  <img src="<%= `/images/${locals.loggedUser.image}` %>" class="rounded" width="35px">
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="/auth/logout">Sair</a>
-                </div>
-            </li>
-        </ul>
-      <% } %> 
-    </div>
+    <% if (locals.loggedUser) { %>
+      <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= locals.loggedUser.email %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/auth/logout">Sair</a>
+              </div>
+          </li>
+      </ul>
+    <% } else { %>
+      <ul class="navbar-nav">
+      </ul>
+    <% } %> 
+    
   </div>
-</div>
-
 </nav>

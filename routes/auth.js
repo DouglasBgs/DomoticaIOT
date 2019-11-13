@@ -25,11 +25,10 @@ router.post('/login', function(req, res, next) {
 
     res.redirect('/');
   } 
-
+  
 
   res.render('login', { msg: 'Email e senha incorretos' });
 });
-
 
 
 router.get('/logout', function(req, res, next) {
@@ -49,4 +48,4 @@ router.get('/logout', function(req, res, next) {
   res.redirect('/');
 });
 
-module.exports = router; 
+module.exports = router;

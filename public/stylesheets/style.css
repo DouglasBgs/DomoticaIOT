@@ -1,8 +1,40 @@
-.pagina-inicial {
-  margin-top: 80px;
-};
+.post-detail img {
+    width: 800px;
+    height: 80px;
+}
 
-.user {
+.post-detail h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: blue;
+}
 
-  padding-left: 100px;
+.testimony {
+    margin-bottom: 40px;
+}
+
+.testimonial-description {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.card-img-top {
+    margin: 10px;
+    width: 100px;
+    height: 120px;
+}
+
+.cart-bottom-menu {
+    margin-top: 10px;
+}
+
+.cart-total {
+    font-size: 24px;
+    font-weight: bold;
 }

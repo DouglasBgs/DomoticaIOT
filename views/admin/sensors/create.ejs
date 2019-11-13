@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Posts</title>
+  <%- include('../../imports'); -%>
+</head>
+<body>
+  <%- include('../../navbar'); -%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Novo Sensor</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <form action="create" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="postTitle">Título</label>
+                <input name="name" type="text" class="form-control" id="postTitle" placeholder="Nome do sensor">
+              </div>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+      </div>
+        
+    </div>
+  </div>
+</body>
+</html>
